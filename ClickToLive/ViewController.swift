@@ -159,12 +159,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+        print("paige is making a branch"
 
         print("Colin Hehn is creating a branch.")
-        
-        print("Ryan Atkinson made a change :)")
+      
         print("Ryan creating a branch")
+      
         // print("ViewController Did Load")
+      
         self.navigationController?.delegate = self
        
         buildScenarios()
@@ -460,7 +463,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                     
                 }
                 self.present(explanationAlert, animated: true){
-                    self.playSound(file: "trumpet.wav")
+                    self.playSound(file: "bicycleBell.wav")
                 }
             }
             
@@ -531,7 +534,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                 
             }
             self.present(explanationAlert, animated: true){
-                self.playSound(file: "trumpet.wav")
+                self.playSound(file: "bicycleBell.wav")
             }
             self.updateAll()
         }))
