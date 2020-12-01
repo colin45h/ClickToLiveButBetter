@@ -66,10 +66,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     var highestLevel = 1
     @IBOutlet weak var levelOutlet: UILabel!
     
-    //growth rate outlet
+    // Growth Rate Outlet
      @IBOutlet weak var nationPercentOutlet: UILabel!
     
-    // outlet for red hospital threshold line
+    // Outlet for Red Hospital Threshold Line
     @IBOutlet weak var hospitalCapacityOutlet: UILabel!
     
     var day = 0
@@ -83,7 +83,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBOutlet weak var familyHealthOutlet: UIStackView!// not needed
    
-    // variables and outlets for Needs
+    // Variables and Outlets for Needs
     var min : Float = 0.5
     
     var dailyFood : Float =  0.0
@@ -125,11 +125,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     var scenarios : [Scenario] = []
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        storeOutlet.isEnabled = true
-//        nextDayOutlet.isEnabled = true
-//    }
-    
     func buildScenarios()
     {
         scenarios = [
@@ -153,7 +148,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print("view did appear")
+        // print("View Did Appear")
         height = graphView.frame.height
         if first{
         randomStart()
@@ -164,9 +159,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // print("viewcontroller load")
-        print("paige is making a branch")
-        
+      
+        print("paige is making a branch"
+
+        print("Colin Hehn is creating a branch.")
+      
+        print("Ryan creating a branch")
+      
+        // print("ViewController Did Load")
+      
         self.navigationController?.delegate = self
        
         buildScenarios()
@@ -188,6 +189,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         coronaButton.isEnabled = false
       
         resetDailyTotals()
+        
         //randomStart()
         //drawCurve()
         
@@ -248,7 +250,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         
         var alert = UIAlertController(title: "Level \(level)", message: "", preferredStyle: .actionSheet)
         
-         if let popoverController = alert.popoverPresentationController {
+        if alert.popoverPresentationController != nil {
             alert = UIAlertController(title: "Level \(level)", message: "", preferredStyle: .alert)
         }
          alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
@@ -326,7 +328,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
             timer?.invalidate()
             sound?.stop()
             var loseAlert = UIAlertController(title: "You Lose!", message: loserMessage, preferredStyle: .actionSheet)
-            if let popoverController = loseAlert.popoverPresentationController {
+            if loseAlert.popoverPresentationController != nil {
                 loseAlert = UIAlertController(title: "You Lose!", message: loserMessage, preferredStyle: .alert)
             }
             
@@ -345,7 +347,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
             timer?.invalidate()
             sound?.stop()
             var loseAlert = UIAlertController(title: "You Lose", message: "Nation Health has overwhelemed the hospitals!", preferredStyle: .actionSheet)
-            if let popoverController = loseAlert.popoverPresentationController {
+            if loseAlert.popoverPresentationController != nil {
                 loseAlert = UIAlertController(title: "You Lose", message: "Nation Health has overwhelemed the hospitals!", preferredStyle: .alert)
             }
             loseAlert.view.backgroundColor = UIColor.red
@@ -373,7 +375,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         let choice = Int.random(in: 0 ... scenarios.count - 1)
         let scenario = scenarios[choice]
         var alert = UIAlertController(title: "\(scenario.goodEffect) Opportunity!" , message: scenario.description, preferredStyle: .actionSheet)
-            if let popoverController = alert.popoverPresentationController {
+            if alert.popoverPresentationController != nil {
                 alert = UIAlertController(title: "\(scenario.goodEffect) Opportunity!" , message: scenario.description, preferredStyle: .alert)
             }
       
@@ -402,7 +404,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                 
             if Float.random(in: 0...1.0) < scenario.probability{
                 explanationAlert = UIAlertController(title: "UH-OH!", message: "\(scenario.yes)  \(scenario.yesYes)" , preferredStyle: .actionSheet)
-                if let popoverController = explanationAlert.popoverPresentationController {
+                if explanationAlert.popoverPresentationController != nil {
                     explanationAlert = UIAlertController(title: "UH-OH!", message: "\(scenario.yes)  \(scenario.yesYes)" , preferredStyle: .alert)
                 }
                 explanationAlert.addAction(UIAlertAction(title: "ok", style: .default, handler: {(alert) in
@@ -448,7 +450,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
             }
             else{
                 explanationAlert = UIAlertController(title: "You Got Lucky!", message: "\(scenario.yes)" , preferredStyle: .actionSheet)
-                if let popoverController = explanationAlert.popoverPresentationController {
+                if explanationAlert.popoverPresentationController != nil {
                     explanationAlert = UIAlertController(title: "You Got Lucky!", message: "\(scenario.yes)" , preferredStyle: .alert)
                 }
                 explanationAlert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
@@ -516,7 +518,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                             print("No good effect?")
                         }
             explanationAlert = UIAlertController(title: "Good and Bad", message: "\(scenario.no)" , preferredStyle: .actionSheet)
-            if let popoverController = explanationAlert.popoverPresentationController {
+            if explanationAlert.popoverPresentationController != nil {
                 explanationAlert = UIAlertController(title: "Good and Bad", message: "\(scenario.no)" , preferredStyle: .alert)
             }
             
@@ -587,7 +589,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     func createFoodGroupAlert(message m: String)->UIAlertController{
         var foodAlert = UIAlertController(title: "You ran out of \(m)", message: "Family Health will suffer 3%", preferredStyle: .actionSheet)
-        if let popoverController = foodAlert.popoverPresentationController {
+        if foodAlert.popoverPresentationController != nil {
           foodAlert = UIAlertController(title: "You ran out of \(m)", message: "Family Health will suffer 3%", preferredStyle: .alert)
         }
         
@@ -686,7 +688,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
             if nationHealthRate <= 0.0 {
                 sound?.stop()
                 var winAlert = UIAlertController(title: "You Win Level \(level)", message: "You helped flatten the curve!", preferredStyle: .actionSheet)
-                if let temp = winAlert.popoverPresentationController{
+                if winAlert.popoverPresentationController != nil {
                     winAlert = UIAlertController(title: "You Win Level \(level)", message: "You helped flatten the curve!", preferredStyle: .alert)
                 }
                 winAlert.view.backgroundColor = UIColor.yellow
