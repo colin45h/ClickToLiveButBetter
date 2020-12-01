@@ -159,12 +159,18 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        print("Borucki is creatin a branch!")
       
-        print("paige is making a branch"
+        print("Paige is making a branch")
 
         print("Colin Hehn is creating a branch.")
       
         print("Ryan creating a branch")
+      
+        print("Teagan creating a branch")
+      
+        print("Aiden creating a branch")
       
         // print("ViewController Did Load")
       
