@@ -159,6 +159,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Borucki is creatin a branch!")
         // print("ViewController Did Load")
         self.navigationController?.delegate = self
        
